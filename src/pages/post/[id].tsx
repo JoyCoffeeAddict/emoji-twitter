@@ -5,7 +5,6 @@ import { api } from "~/utils/api"
 
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
-import Image from "next/image"
 import { PostView } from "~/components/PostView"
 import { PageLayout } from "~/components/layout"
 import { LoadingPage } from "~/components/loading"
@@ -53,11 +52,6 @@ const SignlePostPage: NextPage<{ id: string }> = ({ id }) => {
     </>
   )
 }
-
-import { createServerSideHelpers } from "@trpc/react-query/server"
-import superjson from "superjson"
-import { appRouter } from "~/server/api/root"
-import { prisma } from "~/server/db"
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const ssg = generateSSGHelper()
